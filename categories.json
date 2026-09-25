@@ -1,0 +1,6 @@
+{
+  "outing": { "title": "おでかけ・予約", "description": "お店・宿・レジャーの候補探しと予約", "order": 1 },
+  "shopping": { "title": "買い物", "description": "商品の比較・購入の下準備", "order": 2 },
+  "life": { "title": "暮らし・手続き", "description": "家事・契約・行政手続きなど", "order": 3 },
+  "mail-schedule": { "title": "メール・予定", "description": "Gmail・カレンダー・リマインダーの整理", "order": 4 }
+}
