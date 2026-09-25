@@ -24,10 +24,10 @@ Gmailの予約確認メールを探し、まだ登録していない予約をGoo
 
 ### 1. 予約メールを探す
 
-期間の指定がなければ、直近30日に受信したメールを対象にする。次の検索式を基本にする。
+期間の指定がなければ、直近90日に受信したメールを探す（先の日付の予約を早めに取っていることがあるため）。次の検索式を基本にする。
 
 ```
-newer_than:30d -label:予約/登録済み (
+newer_than:90d -label:予約/登録済み (
   from:(ikyu.com OR beauty.hotpepper.jp OR hotpepper.jp OR booking.com OR jalan.net OR travel.rakuten.co.jp
         OR tabelog.com OR gnavi.co.jp OR tablecheck.com OR toreta.in OR opentable
         OR labola.jp OR expy.jp OR toho-one.com OR asoview.com OR jr-central.co.jp OR eki-net.com)
@@ -52,7 +52,7 @@ newer_than:30d -label:予約/登録済み (
 | 前日確認 | 「ご来店前確認」「まもなくご利用日」など | 登録済みなら何もしない。未登録なら登録する |
 | 対象外 | 宣伝、本人確認のお願いだけのメールなど | 何もしない（ラベルも付けない） |
 
-利用日時がすでに過ぎている予約は登録しない（ラベルだけ付ける）。
+**対象は利用日が今日以降の予約だけ。** 利用日時がすでに過ぎている予約は、登録もラベル付けもせず、報告にも載せない。
 
 ### 3. 予約の情報を読み取る
 
@@ -123,7 +123,7 @@ newer_than:30d -label:予約/登録済み (
 
 ### 6. メールにラベルを付ける
 
-登録（または更新・削除・過去の予約なので登録しない）と判断したメールに、Gmailのラベル `予約/登録済み` を付ける。ラベルが無ければ作る。
+登録・更新・削除したメール（今日以降の予約のもの）に、Gmailのラベル `予約/登録済み` を付ける。ラベルが無ければ作る。
 既読・アーカイブ・削除などの操作は行わない。
 
 ### 7. 報告する
